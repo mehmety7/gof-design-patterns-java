@@ -1,7 +1,7 @@
 package decorator.model;
 
-import static constant.ProductDefinitions.TEA_COST;
-import static constant.ProductDefinitions.TEA_NAME;
+import static decorator.constant.ProductDefinitions.TEA_COST;
+import static decorator.constant.ProductDefinitions.TEA_NAME;
 
 public class Tea extends Drink{
 

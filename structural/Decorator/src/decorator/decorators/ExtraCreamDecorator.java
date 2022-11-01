@@ -2,7 +2,7 @@ package decorator.decorators;
 
 import decorator.model.Drink;
 
-import static constant.ProductDefinitions.EXTRA_CREAM_COST;
+import static decorator.constant.ProductDefinitions.EXTRA_CREAM_COST;
 
 public class ExtraCreamDecorator extends DrinkDecorator {
 

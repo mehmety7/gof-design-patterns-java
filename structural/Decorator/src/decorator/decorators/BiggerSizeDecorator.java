@@ -2,7 +2,7 @@ package decorator.decorators;
 
 import decorator.model.Drink;
 
-import static constant.ProductDefinitions.BIGGER_SIZE_COST;
+import static decorator.constant.ProductDefinitions.BIGGER_SIZE_COST;
 
 public class BiggerSizeDecorator extends DrinkDecorator {
 

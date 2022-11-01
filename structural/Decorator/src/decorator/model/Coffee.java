@@ -1,7 +1,7 @@
 package decorator.model;
 
-import static constant.ProductDefinitions.COFFEE_COST;
-import static constant.ProductDefinitions.COFFEE_NAME;
+import static decorator.constant.ProductDefinitions.COFFEE_COST;
+import static decorator.constant.ProductDefinitions.COFFEE_NAME;
 
 public class Coffee extends Drink{
 

@@ -1,4 +1,4 @@
-package constant;
+package decorator.constant;
 
 public final class ProductDefinitions {
 
