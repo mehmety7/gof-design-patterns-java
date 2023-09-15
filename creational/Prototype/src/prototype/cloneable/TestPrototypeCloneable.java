@@ -1,8 +1,5 @@
 package prototype.cloneable;
 
-import prototype.cloneable.Item;
-import prototype.cloneable.Product;
-
 public class TestPrototypeCloneable {
 
     public static void main(String[] args) {

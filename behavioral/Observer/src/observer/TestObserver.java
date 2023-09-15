@@ -1,30 +1,27 @@
 package observer;
 
-import observer.component.Observer;
-import observer.component.StudentObserver;
-import observer.component.TeacherObserver;
-import observer.messaging.CourseSubject;
-import observer.messaging.Subject;
-import observer.service.CourseService;
+import observer.course.CourseService;
+import observer.course.CourseTopic;
+import observer.course.Student;
+import observer.course.Teacher;
 
 public class TestObserver {
 
     public static void main(String[] args) {
+        CourseTopic courseTopic = new CourseTopic();
+        Student student1 = new Student();
+        Student student2 = new Student();
+        Teacher teacher = new Teacher();
+        CourseService courseService = new CourseService(courseTopic);
 
-        Subject courseSubject = new CourseSubject();
-        CourseService courseService = new CourseService(courseSubject);
+        courseTopic.addObserver(teacher);
+        courseTopic.addObserver(student1);
+        courseTopic.addObserver(student2);
 
-        Observer student = new StudentObserver();
-        Observer teacher = new TeacherObserver();
+        courseTopic.postAnnouncement("Welcome all");
+        courseTopic.removeObserver(student2);
 
-        courseSubject.register(student);
-        courseSubject.register(teacher);
-
-        courseService.addCourse("math");
-        courseService.addCourse("literature");
-
-        courseSubject.unregister(teacher);
-        courseService.deleteCourse("literature");
+        courseService.doCreate("Math");
     }
 
 }

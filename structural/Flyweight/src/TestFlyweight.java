@@ -1,16 +1,21 @@
 import flyweight.Product;
 import flyweight.ProductFlyweightFactory;
-import flyweight.Size;
+import flyweight.ProductType;
+
+import java.util.Objects;
 
 public class TestFlyweight {
 
     public static void main(String[] args) {
-        Size size = new Size("XL");
 
-        Product product1 = ProductFlyweightFactory.createProduct("product1", size);
-        System.out.println(product1);
+        Product food1 = ProductFlyweightFactory.createProduct(ProductType.FOOD);
+        Product food2 = ProductFlyweightFactory.createProduct(ProductType.FOOD);
+        Product drink1 = ProductFlyweightFactory.createProduct(ProductType.DRINK);
+        Product drink2 = ProductFlyweightFactory.createProduct(ProductType.DRINK);
 
-        Product product2 = ProductFlyweightFactory.createProduct("product2", size);
-        System.out.println(product2);
+        System.out.println("Foods refer to same object: " + Objects.deepEquals(food1, food2) + " / " + food1.toString());
+        System.out.println("Drinks refer to same object: " + Objects.deepEquals(drink1, drink2) + " / " + drink1.toString());
+        System.out.println("Foods and drinks refer to same object: " + Objects.deepEquals(food1, drink1));
+
     }
 }

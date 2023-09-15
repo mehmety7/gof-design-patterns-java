@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class ProductFlyweightFactory {
 
-    private static Map<Size, Product> productCache = new HashMap<>();
+    private static final Map<ProductType, Product> productCache = new HashMap<>();
 
-    public static Product createProduct(String name, Size size) {
-        return productCache.computeIfAbsent(size, newSize -> new Product(name, newSize));
+    public static Product createProduct(ProductType productType) {
+        return productCache.computeIfAbsent(productType, Product::new);
     }
 
 }
